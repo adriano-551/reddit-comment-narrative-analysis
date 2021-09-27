@@ -275,38 +275,3 @@ print("MultinomialNB")
 predicted = allSubMultinomial.predict(cardiffData_test.post)
 print(metrics.f1_score(cardiffData_test_y, predicted, pos_label='narrative'))
 print("")
-
-
-"""
-dataframe = pd.DataFrame(
-    {'post': allSubData_test.post, 
-    'label': allSubData_test.label, 
-    'prediction': allSubKNeighbors.predict(allSubData_test_x_wvec)})
-
-confidencelist = []
-for i in allSubKNeighbors.predict_proba(allSubData_test_x_wvec):
-    confidencelist.append(str(i[0]) + ' : ' + str(i[1]))
-dataframe['confidence']=confidencelist
-dataframe.to_csv('AllKNNAll.csv')
-
-
-dataframe = pd.DataFrame(
-    {'post': cardiffData_test.post, 
-    'label': cardiffData_test.label, 
-    'prediction': cardiffKNeighbors.predict(cardiffData_test_x_wvec)})
-
-confidencelist = []
-for i in cardiffKNeighbors.predict_proba(cardiffData_test_x_wvec):
-    confidencelist.append(str(i[0]) + ' : ' + str(i[1]))
-dataframe['confidence']=confidencelist
-dataframe.to_csv('CardiffKNNCardiff.csv')
-"""
-
-"""
-x = []
-
-x_list = [nlp(doc).vector.reshape(1,-1) for doc in x]
-xwvec = np.concatenate(x_list)
-
-cardiffSVC.decision_function(xwvec)
-"""
